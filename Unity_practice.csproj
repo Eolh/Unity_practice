@@ -239,7 +239,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Map\MoveMap.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\ObstacleInfo.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAction.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
