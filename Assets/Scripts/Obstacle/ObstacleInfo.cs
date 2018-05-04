@@ -20,6 +20,7 @@ public class ObstacleInfo : MonoBehaviour
         height = 0.5f + 0.5f * lv; // basic 0.5f + increase 0.5f per level
         Vector3 tempVec = new Vector3(1f, height, 1f);
         obsTf.localScale = tempVec;
+        Debug.Log(lv + "," + tempVec.y);
     }
 
     void OnTriggerEnter2D(Collider2D col)

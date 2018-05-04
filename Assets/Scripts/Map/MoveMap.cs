@@ -35,6 +35,7 @@ public class MoveMap : MonoBehaviour
         public GameObject obj;
         public bool active;
         public int parentTileNum;
+        public ObstacleInfo info; // obs infomation script
     }
     private ObstacleStruct[] obss;
     //end add obstacle code
@@ -89,6 +90,7 @@ public class MoveMap : MonoBehaviour
                 obss[i].obj.SetActive(true); // set active
                 obss[i].active = true;
                 obss[i].obj.transform.position = tempVec;
+                obss[i].info.SetObstacle(Random.Range(0, 9)); // Temporarily add random value
                 obss[i].obj.transform.SetParent(tiles[tileN].tf); // change parent
                 obss[i].parentTileNum = tileN;
                 break; // when create one obstacle, don't need loop & create 
@@ -142,6 +144,7 @@ public class MoveMap : MonoBehaviour
             obss[i].obj = Instantiate(obstacle, Vector3.zero, Quaternion.identity) as GameObject; // create
             obss[i].active = false;
             obss[i].parentTileNum = -1;
+            obss[i].info = obss[i].obj.GetComponent<ObstacleInfo>(); // get component(script)
             obss[i].obj.SetActive(false); // initial state is nonActive
         }
     }
